@@ -1,0 +1,28 @@
+<ng-container >
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
+                 [fixedInViewport]="true"
+                 [fixedTopGap]="0"
+                 [fixedBottomGap]="0">
+
+        <div class="profile-element" dropdown>
+          <img alt="image" class="img-circle" src="./assets/user.jpeg"
+           style="width: 70px">
+           <br>
+            <span class="text-xs text-white block">Hurrey User</span>
+        </div>
+      <mat-list>
+        <mat-list-item ><a [routerLink]="['/institutes']">Institution</a>  </mat-list-item>
+        <mat-list-item ><a [routerLink]="['/batche']">Batch</a> </mat-list-item>
+       </mat-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+      <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+      <router-outlet></router-outlet>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</ng-container>
